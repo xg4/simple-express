@@ -13,6 +13,9 @@ app.use('/error', function(req, res, next) {
 })
 
 app.get('/', (req, res) => {
+  console.log(req.path)
+  console.log(req.query)
+  console.log(req.hostname)
   res.end('hello express')
 })
 

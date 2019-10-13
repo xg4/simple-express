@@ -1,5 +1,6 @@
 const http = require('http')
 const url = require('url')
+const requestMiddleware = require('./request')
 
 module.exports = class Application {
   constructor() {
@@ -16,6 +17,8 @@ module.exports = class Application {
         this.routes.push(layer)
       }
     })
+
+    this.use(requestMiddleware)
   }
 
   handler(req, res) {
